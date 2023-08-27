@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -49,21 +43,41 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyCa4FDKIyVPis4SsbBsCfmzjEQrvBxSn8s',
+    appId: '1:535042158426:web:ec47167865abfd3e0fcd63',
+    messagingSenderId: '535042158426',
+    projectId: 'whtsapclone-29d24',
+    authDomain: 'whtsapclone-29d24.firebaseapp.com',
+    storageBucket: 'whtsapclone-29d24.appspot.com',
+    measurementId: 'G-Q52VJ7HBKC',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBrzgd-Y7rSYXGXqfsDyMNb-NXAXf9AkBw',
-    appId: '1:121479615505:android:1108437de44aab9cd1cdb0',
-    messagingSenderId: '121479615505',
-    projectId: 'whatsapp-backend-829ef',
-    storageBucket: 'whatsapp-backend-829ef.appspot.com',
+    apiKey: 'AIzaSyCzBU1aXoXlN2RdHY7Rgd3RmpROfM1J0RQ',
+    appId: '1:535042158426:android:290d48e277af9c110fcd63',
+    messagingSenderId: '535042158426',
+    projectId: 'whtsapclone-29d24',
+    storageBucket: 'whtsapclone-29d24.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDVNa2UTezPALJ9P6SAwHvjd3fDOmkPF-o',
-    appId: '1:121479615505:ios:234e63850a99ba5fd1cdb0',
-    messagingSenderId: '121479615505',
-    projectId: 'whatsapp-backend-829ef',
-    storageBucket: 'whatsapp-backend-829ef.appspot.com',
-    iosClientId: '121479615505-u8r2od9vrrf10hqubvbvm30bmba9qoae.apps.googleusercontent.com',
-    iosBundleId: 'com.example.whatsappUi',
+    apiKey: 'AIzaSyBgV8b0plRs7GTQ8dtTSshfuF4TQH0QNXw',
+    appId: '1:535042158426:ios:e7bcfbc116f737070fcd63',
+    messagingSenderId: '535042158426',
+    projectId: 'whtsapclone-29d24',
+    storageBucket: 'whtsapclone-29d24.appspot.com',
+    iosClientId: '535042158426-ara5nl6vsq0no3ag7lksufcbhf16a6nf.apps.googleusercontent.com',
+    iosBundleId: 'com.example.chatapp',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBgV8b0plRs7GTQ8dtTSshfuF4TQH0QNXw',
+    appId: '1:535042158426:ios:74b6ebad239ca0c90fcd63',
+    messagingSenderId: '535042158426',
+    projectId: 'whtsapclone-29d24',
+    storageBucket: 'whtsapclone-29d24.appspot.com',
+    iosClientId: '535042158426-ie168u1a0s2flrfmgrek6mqe23lhkjd6.apps.googleusercontent.com',
+    iosBundleId: 'com.example.chatapp.RunnerTests',
   );
 }
